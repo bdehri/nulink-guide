@@ -75,19 +75,12 @@ screen -S nulink
 nulink ursula run --no-block-until-ready
 ```
 
-7. Hesabınızı herhangi bir uzantı cüzdanına aktarın
+7. Bu adrese gidin: https://dashboard.testnet.nulink.org/
 
-```bash
-cat /root/geth-linux-amd64-1.10.23-d901d853/keystore/*
-```
+Worker cüzdanınızdan farklı bir cüzdana testnet tokenlarını alın ve nulink stake edin.
 
-Bu çıktıyı yerel bilgisayarınızda bir dosyaya kaydedin. Bu dosyayı json içe aktarma yöntemini kullanarak cüzdanınıza aktarabilirsiniz.
 
-8. Test token'larını alın ve nulink web sitesinden token'larınızı stakeleyin. https://dashboard.testnet.nulink.org/staking
-
-Aynı sayfada bond worker işlemini tamamlayın. Worker'ınız bir süre sonra online olacaktır.
-
-9. Node'unuzun online duruma geçmesi 30 ile 60 dakika arasında sürebilir. Eğer node'unuz online olmazsa aşağıdaki komutları çalıştırarak node'unuzu yeniden başlatabilirsiniz.
+8. Aynı sayfada worker cüzdan adresini kullanarak bond worker işlemini tamamlayın.(Worker cüzdanı daha önceki adımlarda Geth ile oluşturduğunuz cüzdandır. ) Worker'ınız bir süre sonra online olacaktır. Aşağıdaki komutları kullanarak node'unuzu yeniden başlatabilirsiniz.
 
 ```bash 
 screen -r -d nulink
@@ -99,6 +92,8 @@ Node'un kapanması biraz vakit alacaktır. Terminal satırı tekrar geldiğinde 
 ```bash
 nulink ursula run --no-block-until-ready
 ```
+
+9. Node'unuzun online duruma geçmesi 30 ile 60 dakika arasında sürebilir. Eğer node'unuz online olmazsa tekrar başlatın
 
 ## Prerequisites
 
@@ -177,26 +172,19 @@ screen -S nulink
 nulink ursula run --no-block-until-ready
 ```
 
-7. Import your account to any extension wallet
+7. Go to this address: https://dashboard.testnet.nulink.org/
 
-```bash
-cat /root/geth-linux-amd64-1.10.23-d901d853/keystore/*
-```
+Get testnet tokens to any other wallet than your worker wallet. 
 
-Save the printed content to a file in at your local computer. You can import this file to your wallet using json import method.
 
-8. Get test tokens and stake your tokens from nulink website. https://dashboard.testnet.nulink.org/staking
+8. At the same page, stake your tokens and bound your worker(Worker wallet is the wallet generated via geth in the previous steps.). Worker will come online in a while. You can use the commands below to restart your node.
 
-Complete the bond worker process on the same page. Your worker will be online after a while.
-
-9. It may take 30 to 60 minutes for your node to go online. If your node does not go online, you can restart your node by running the following commands.
-
-```bash
+```bash 
 screen -r -d nulink
 ctrl + c
 ```
 
-It might take a while for the node to shut down. When the terminal line comes back, you can restart your node by running the following commands.
+It might take a while to node to stop. After it stopped, you can use the command below to start it again.
 
 ```bash
 nulink ursula run --no-block-until-ready
